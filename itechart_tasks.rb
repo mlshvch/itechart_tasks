@@ -28,23 +28,20 @@ times = [['10:00', '10:20'], ['10:40', '11:00'], ["10:50", "12:00"], ["12:00", "
 
 def merge_time(times)
     times = times.uniq.sort
-    i = 1
-    while i > 0 do
-
-        if times[i - 1][1] >= times[i][0] then
-            times[i - 1] += times[i]
+    result = []
+    (0..times.length - 2).each { |i|
+        if times[i][1] >= times[i+1][0]
+            result << [(times[i] + times[i+1]).min, (times[i] + times[i+1]).max ]
+        else
+            result << times[i]
         end
-
-        i += 1
-
-        pp times
-
-        if i == times.length then
-            i = 1
-        end
-        times = times.uniq
-    end
-
+    }
+    pp result
+    merge_time(times)
 end
 
-substr("a b c a d d d b, d")
+
+merge_time(times)
+
+# task 5
+# substr("a b c a d d d b, d")
