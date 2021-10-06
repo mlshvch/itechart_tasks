@@ -54,7 +54,7 @@ end
 
 def merge_time(times)
     times = times.sort.uniq 
-    count = times.length + 1
+    count = 1
     while times.length > 1 && count > 0 do
         i = 1
         while i < times.length - 1 do
@@ -78,6 +78,6 @@ def merge_time(times)
     pp times
 end
 
-times = [['10:00', '10:20'], ['10:40', '11:00'], ["10:50", "12:00"], ["12:00", "13:00"], ['10:00', '10:20']]
+times = [['10:00', '10:20'], ['14:00', '15:00'], ['10:40', '11:00'], ["10:50", "12:00"], ["12:00", "13:00"], ['10:00', '10:20']]
 
 merge_time(times)
