@@ -33,6 +33,25 @@ end
 
 #task 6
 
+def intersect(array1, array2)
+    if array1[1] >= array2[0] then
+        return true
+    else
+        return false
+    end
+end
+
+
+def merge(array1, array2)
+    if array1[1] >= array2[0] then
+        array1 += array2
+        return [array1.min, array1.max]
+    else
+        return [array1, array2]
+    end
+end
+
+
 def merge_time(times)
     times = times.sort.uniq 
     count = times.length + 1
