@@ -13,14 +13,14 @@ end
 # task 3
 
 def acronym(string)
-    string.split().map {|word| word[0].upcase}.join
+    string.split.map {|word| word[0].upcase}.join
 end
 
 #task 4
 
 def substr(string)
     result = []
-    string = string.gsub(/[[:punct:]]/, '').downcase.split().sort
+    string = string.gsub(/[[:punct:]]/, '').downcase.split.sort
     string.uniq.map {|word| result.push(word.concat(": ", string.count(word).to_s))}
     result.join(", ")
 end
