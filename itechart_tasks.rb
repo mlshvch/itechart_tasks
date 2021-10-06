@@ -1,7 +1,7 @@
 
 # task 1
 def only_odd(array)
-    pp "task #1 result: ", array.select { |number| number.odd? == false }
+    pp "task #1 result: ", array.select { |number| number.odd? == true }
 end
 
 # task 2
@@ -16,9 +16,12 @@ end
 
 def substr(string)
     result = []
-    string.gsub(/[[:punct:]]/, '').downcase.split().sort.map {|word| result.push(word.concat(": ", string.count(word).to_s))}
-    pp result.uniq.join(", ")
+    string = string.gsub(/[[:punct:]]/, '').downcase.split().sort
+    string.uniq.map {|word| result.push(word.concat(": ", string.count(word).to_s))}
+    pp result.join(", ")
 end
+
+
 
 def phone_number(string)
     pp string.match?(/^\+375\((17|29|33|44|25)\)[\d]{7}$/)
@@ -40,7 +43,7 @@ def merge_time(times)
                 result << times[i]
             end
         }
-        break if (result.flatten.max != times.flatten.max && result.length != length)
+        break if (result.flatten.max != times.flatten.max)
         
         pp result
         
@@ -49,7 +52,4 @@ def merge_time(times)
 end
 
 
-merge_time(times)
-
-# task 5
-# substr("a b c a d d d b, d")
+substr("I love love you Ruby Ruby")
