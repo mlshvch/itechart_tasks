@@ -1,7 +1,7 @@
 
 # task 1
 def only_odd(array)
-    array.select { |number| number.odd? == true }
+    array.select { |number| number.odd? }
 end
 
 # task 2
